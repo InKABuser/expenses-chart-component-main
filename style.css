@@ -1,0 +1,167 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Poppins:wght@400;700&display=swap");
+
+/* 1. Use a more-intuitive box-sizing model */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+* {
+  margin: 0;
+}
+
+body {
+  /* 3. Add accessible line-height */
+  line-height: 1.5;
+  /* 4. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 5. Improve media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 6. Inherit fonts for form controls */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* 7. Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* 8. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+/*
+    9. Create a root stacking context
+  */
+#root,
+#__next {
+  isolation: isolate;
+}
+:root {
+  --Soft-red: hsl(10, 79%, 65%);
+  --Cyan: hsl(186, 34%, 60%);
+  --Dark-brown: hsl(25, 47%, 15%);
+  --Medium-brown: hsl(28, 10%, 53%);
+  --Cream: hsl(27, 66%, 92%);
+  --Very-pale-orange: hsl(33, 100%, 98%);
+}
+/* main */
+body {
+  min-height: 100vh;
+  min-height: 100dvh;
+  background-color: var(--Cream);
+  display: grid;
+  place-content: center;
+  font-family: "DM Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-size: 18px;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+  width: min(90vw, 500px);
+  > .balance {
+    color: white;
+    background-color: var(--Soft-red);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em;
+    padding-inline: 1.5em;
+    border-radius: 1em;
+    > .actual-balance {
+      > h1 {
+        font-size: 0.8em;
+        font-weight: 400;
+      }
+      > p {
+        font-size: 1.5em;
+        font-weight: 700;
+      }
+    }
+    > .design {
+      img {
+        width: 50px;
+        aspect-ratio: 1;
+      }
+    }
+  }
+  > .chart {
+    background-color: white;
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    border-radius: 1em;
+    > h2 {
+      color: var(--Dark-brown);
+    }
+    > #bar-charts {
+      border-bottom: 1px solid rgba(147, 134, 123, 0.25);
+    }
+    > .info {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      > .total-month {
+        h3 {
+          color: var(--Medium-brown);
+          font-size: 0.7em;
+        }
+        > p {
+          color: var(--Dark-brown);
+          font-weight: 700;
+          font-size: 1.7em;
+        }
+      }
+      > .percentage {
+        text-align: right;
+        font-size: 0.9em;
+        color: var(--Dark-brown);
+        font-weight: 700;
+
+        > span {
+          display: block;
+          color: var(--Medium-brown);
+        }
+      }
+    }
+  }
+}
+.chartjs-tooltip {
+  background-color: red;
+}
